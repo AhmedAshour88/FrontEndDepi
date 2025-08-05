@@ -1,6 +1,7 @@
 // * ====== Lab 2 Solutions By Ahmed Elsayed Ashour ====== *
 //Q1 Create a function called ‘ capitalizeWords’ that takes a string
 //and returns the string with the first letter of each word capitalized.
+console.log("Q 1");
 function capitalizeWords(s){
     let st = []
     if (s.length >= 1){ 
@@ -30,6 +31,7 @@ console.log(capitalizeWords(s))
 //Q2- Create a function called ‘ mergeSortedArrays’ that takes two
 //sorted arrays and returns a single sorted array by merging them.
 //([1, 3, 5], [2, 4, 6]) ==> [1, 2, 3, 4, 5, 6]
+console.log("Q 2");
 function mergeSortedArrays (a, b){
     if(a.length <= b.length){
         arr1 = a;
@@ -69,7 +71,7 @@ console.log(mergeSortedArrays([1,3, 4, 4,5,7,9,11,13,15],[1,4,6, 7,8,10]))
 // Q 3- Write a function called ‘ sumOfSquares’ that takes an array of
 //numbers and returns the sum of their squares.
 // Hint : use reduce()
-
+console.log("Q 3");
 // المحاضرة القادمة 
 
 // =======================================================================
@@ -77,6 +79,7 @@ console.log(mergeSortedArrays([1,3, 4, 4,5,7,9,11,13,15],[1,4,6, 7,8,10]))
 //callback function. The filterArray function should return a new array
 //that contains only the elements for which the callback function
 //returns true.
+console.log("Q 4");
 
 function isEven(n){
     return n%2==0;
@@ -99,6 +102,7 @@ console.log("filterArray(arr, cbFn):", filterArray(arr, isEven))
 //callback function. The mapArray function should return a new array
 //where each element is the result of the callback function applied to
 //the corresponding element of the input array.
+console.log("Q 5");
 
 function multiplyByTwo(n){
     return n*2;
@@ -120,21 +124,22 @@ console.log("mapArray(arr, cbFn):", mapArray(a, multiplyByTwo))
 //should return a single value that is the result of applying the
 // function to each element of the array, using the initial
 //value as the starting point.
+console.log("Q 6");
+function accumSumSquare (acc, current) {return acc + current*current;}
+function reduceArray(array, callback, initialValue) {
+    let accumulator = initialValue;
 
-function sqr(n){
-    return n*n;
-}
-function reduceArray(arr, cbFn){
-    let result = 0;
-    let x=0;
-    for(i=0;i<arr.length;i++){
-          result=result+cbFn(arr[i]); 
-          x=x+1;   
+    for (let i = 0; i < array.length; i++) {
+        accumulator = callback(accumulator, array[i]);
     }
-    return result;
+
+    return accumulator;
 }
-let b = [1,2,3]
-console.log("reduceArray(arr, cbFn):", reduceArray(b, sqr))
+// Example usage
+const numbers = [1, 2, 3, 4];
+
+const resultSumSquare = reduceArray(numbers, accumSumSquare, 0);
+console.log("reduceArray(array, callback, initialValue):", resultSumSquare); //
 // ====================================================================
 //Q 7- Create a function called forEachArray that takes an array and a
 //callback function. The forEachArray function should apply the
@@ -144,6 +149,7 @@ console.log("reduceArray(arr, cbFn):", reduceArray(b, sqr))
 //======================================================================
 //Q 8- Write a function called findMax that takes an array of numbers and
 //returns the maximum number in the array.
+console.log("Q 8");
 
 console.log("findMax(arr):", Math.max(...[1,2,3])) // سؤال ل م.كريم
 function findMax(arr){
@@ -156,6 +162,7 @@ console.log("findMax(arr):", findMax(c))
 //returns a new object that combines the properties of both. If a
 //property exists in both objects, the value from the second object
 //should be used.
+console.log("Q 9");
 
 function mergeObjects(obj1, obj2){
     let obj = obj2;
@@ -196,6 +203,7 @@ console.log("mergeObjects(obj1, obj2):", mergeObjects(obj1, obj2))
 //Q 10- Write a function called invertObject that takes an object and
 //returns a new object where the keys and values are swapped.
 //{ a: 1, b: 2, c: 3 } ==> { 1: 'a', 2: 'b', 3: 'c' }
+console.log("Q 10");
 function invertObject (obj){
     arr = Object.keys(obj);
     let invObj = {};
@@ -215,6 +223,7 @@ console.log("invertObject (obj):", invertObject (obj))
 //Q 11- Write a function called omitKeys that takes an object and an
 //array of keys, and returns a new object that omits the specified keys.
 //{ a: 1, b: 2, c: 3, d: 4 } ==> omit (b , d) ====> { a: 1, c: 3 }  
+console.log("Q 11");
 function omitKeys(obj, omit){
      let omitObj = {}
      let objKeys = Object.keys(obj)
@@ -247,6 +256,7 @@ console.log("omitKeys(obj, omit):", omitKeys (objx, omit))
 //array of keys, and returns a new object that includes only the
 //specified keys.
 //{ a: 1, b: 2, c: 3, d: 4 } ==> omit (b , d) ====> { b: 2, d: 4 }
+console.log("Q 12");
 
 function pickKeys(obj, pick){
      let pickObj = {}
@@ -273,6 +283,7 @@ console.log("pickKeys(obj, pick):", pickKeys(objy, pick))
 // ====================================================================
 // Q 13- Write a function called reverseArray that takes an array and
 //returns a new array with the elements in reverse order.
+console.log("Q 13");
 function reverseArray (arr){
     let rvarr = []
     for(i=arr.length-1; i>=0; i--){
@@ -286,6 +297,7 @@ console.log("reverseArray (arr):", reverseArray (arrz))
 //Q 14- Write a function called countOccurrences that takes an array and
 //a value, and returns the number of times the value appears in the
 //array.
+console.log("Q 14");
 function countOccurrences(arr, v){
     let count = 0;
     for(i=0;i<arr.length;i++){
