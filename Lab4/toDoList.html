@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="toDoList.css">
+    <title>To Do List</title>
+</head>
+<body>
+<div class="flex-center">
+<form id="taskForm">
+<input id="task" type="text" required placeholder="Enter Task Decription"/>
+<input id="addBtn" value = "Add" type="submit"/>
+</form>
+</div>
+<div class="flex-center">
+<table id="tblTasks">
+  <thead>
+    <tr><th>Done</th><th>Task</th><th>Delete</th></tr>
+  </thead>
+  <tbody></tbody>
+</table>
+</div>
+<script src="toDoList.js"></script>    
+</body>
+</html>
